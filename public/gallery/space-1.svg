@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img">
+  <rect width="800" height="600" fill="#e8f0eb"/>
+  <rect x="80" y="80" width="640" height="440" rx="24" fill="#d4e2d9"/>
+  <circle cx="400" cy="260" r="72" fill="#b8cfc0" opacity="0.8"/>
+  <text x="400" y="500" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#5c7a6b">Gallery image 1</text>
+</svg>
