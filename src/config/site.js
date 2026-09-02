@@ -39,7 +39,7 @@ export const site = {
   ],
 
   booking: {
-    bookingUrl: 'https://calendly.com/example/consultation',
+    bookingUrl: 'https://calendly.com/brendansmythh/30min',
     bookingDisplayMode: 'modal',
     label: 'Book a Session',
     inlineHeadline: 'Schedule a consultation',
@@ -178,7 +178,7 @@ export const site = {
       'Reach out for a free 15-minute consultation. I typically respond within one business day.',
     email: 'hello@yourpractice.com',
     phone: '(416) 555-0123',
-    bookingUrl: 'https://calendly.com/example/consultation',
+    bookingUrl: 'https://calendly.com/brendansmythh/30min',
     office: '123 Wellness Street, Suite 200\nToronto, ON M5V 1A1',
     hours: 'Monday – Thursday, 9am – 6pm',
     formNote: 'Your message is confidential. Please do not include sensitive clinical details in this form.',
