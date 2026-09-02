@@ -54,10 +54,16 @@ export const site = {
   hero: {
     eyebrow: 'Welcome',
     headline: 'A calm space to heal, grow, and move forward.',
+    headlineItalicPhrase: 'forward.',
     subhead:
       'I help adults work through anxiety, burnout, and major life changes with practical tools and genuine care.',
     primaryCta: { label: 'Book a Session', path: '/contact', useBooking: true },
     secondaryCta: { label: 'Learn About My Approach', path: '/about' },
+    trustBar: [
+      'Licensed Clinical Psychologist',
+      '10+ Years Experience',
+      'Currently Accepting New Clients',
+    ],
   },
 
   about: {

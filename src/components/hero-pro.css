@@ -1,0 +1,392 @@
+/* Premium homepage hero — Pro tier only (imported via HeroPro.jsx) */
+
+html.theme-pro .hero--pro {
+  display: block;
+  position: relative;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  color: #f5f0e8;
+  overflow: hidden;
+  background: #141c28;
+}
+
+/* Atmosphere */
+html.theme-pro .hero--pro__atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+html.theme-pro .hero--pro__glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 28% 42%, rgba(45, 58, 79, 0.95), transparent 68%),
+    radial-gradient(ellipse 90% 70% at 50% 100%, #0f151f 0%, #141c28 45%, #1a2332 100%);
+}
+
+html.theme-pro .hero--pro__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+}
+
+html.theme-pro .hero--pro__blob--1 {
+  width: clamp(14rem, 28vw, 22rem);
+  height: clamp(14rem, 28vw, 22rem);
+  top: 8%;
+  right: -6%;
+  background: rgba(184, 125, 75, 0.45);
+}
+
+html.theme-pro .hero--pro__blob--2 {
+  width: clamp(10rem, 20vw, 16rem);
+  height: clamp(10rem, 20vw, 16rem);
+  bottom: 12%;
+  right: 18%;
+  background: rgba(245, 240, 232, 0.12);
+}
+
+html.theme-pro .hero--pro__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Layout */
+html.theme-pro .hero--pro__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 100rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem) clamp(4.5rem, 8vw, 6.5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  min-height: clamp(34rem, 78vh, 46rem);
+}
+
+html.theme-pro .hero--pro__col {
+  min-width: 0;
+  width: 100%;
+}
+
+html.theme-pro .hero--pro__col--copy {
+  display: flex;
+  align-items: center;
+}
+
+/* Eyebrow */
+html.theme-pro .hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.35rem;
+}
+
+html.theme-pro .hero-eyebrow__rule {
+  display: block;
+  width: 2.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--copper-light), transparent);
+}
+
+html.theme-pro .hero-eyebrow__text {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(212, 165, 116, 0.88);
+  margin: 0;
+}
+
+/* Typography */
+html.theme-pro .hero--pro h1 {
+  color: #f5f0e8;
+  font-weight: 500;
+  font-size: clamp(2.85rem, 4.8vw, 4.5rem);
+  line-height: 1.08;
+  max-width: 13ch;
+  margin-bottom: 1.35rem;
+}
+
+html.theme-pro .hero--pro h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(245, 240, 232, 0.92);
+}
+
+html.theme-pro .hero--pro .hero__subhead {
+  color: rgba(245, 240, 232, 0.76);
+  font-size: clamp(1.02rem, 1.55vw, 1.18rem);
+  line-height: 1.75;
+  max-width: 40ch;
+  margin-bottom: 2rem;
+}
+
+html.theme-pro .hero--pro .hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero button micro-interactions */
+html.theme-pro .btn--hero {
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease, border-color 0.28s ease;
+}
+
+html.theme-pro .btn--hero:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+html.theme-pro .btn--hero:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Trust bar */
+html.theme-pro .hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0;
+  list-style: none;
+  margin: 0 0 1.35rem;
+  padding: 0;
+  max-width: 44ch;
+}
+
+html.theme-pro .hero-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+html.theme-pro .hero-trust li span:not(.hero-trust__divider) {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.42);
+}
+
+html.theme-pro .hero-trust__divider {
+  width: 1px;
+  height: 0.75rem;
+  background: rgba(184, 125, 75, 0.45);
+  flex-shrink: 0;
+}
+
+html.theme-pro .hero--pro .hero__location {
+  font-size: 0.84rem;
+  color: rgba(245, 240, 232, 0.45);
+  letter-spacing: 0.02em;
+}
+
+/* Visual column */
+html.theme-pro .hero--pro__col--visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: clamp(26rem, 54vh, 38rem);
+}
+
+html.theme-pro .hero-portrait {
+  position: relative;
+  width: 100%;
+  max-width: 26rem;
+  margin-left: auto;
+  padding: 0 0 1.5rem 2.5rem;
+}
+
+html.theme-pro .hero-portrait__offset {
+  position: absolute;
+  top: 1.25rem;
+  right: -0.65rem;
+  left: 1.25rem;
+  bottom: 2.5rem;
+  border-radius: 1.35rem;
+  background: linear-gradient(145deg, rgba(184, 125, 75, 0.55), rgba(154, 101, 56, 0.28));
+  z-index: 0;
+}
+
+html.theme-pro .hero-portrait__frame {
+  position: relative;
+  z-index: 1;
+}
+
+html.theme-pro .hero-portrait__frame img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(212, 165, 116, 0.4);
+  box-shadow:
+    0 20px 50px rgba(20, 28, 40, 0.45),
+    0 8px 24px rgba(184, 125, 75, 0.12);
+}
+
+/* Focus card — bottom-left, mostly outside image */
+html.theme-pro .hero-portrait__card {
+  position: absolute;
+  left: -0.25rem;
+  bottom: 0;
+  z-index: 2;
+  width: min(74%, 16.5rem);
+  padding: 1.15rem 1.2rem;
+  background: rgba(250, 246, 240, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ink);
+  border-radius: 0.65rem;
+  border: 1px solid rgba(245, 240, 232, 0.65);
+  border-top: 1px solid rgba(184, 125, 75, 0.85);
+  box-shadow: 0 14px 36px rgba(20, 28, 40, 0.18);
+  transform: translate(-18%, 8%);
+}
+
+html.theme-pro .hero-portrait__card .hero-card__label {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.6rem;
+}
+
+html.theme-pro .hero-portrait__card ul {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+}
+
+html.theme-pro .hero-portrait__card li {
+  font-size: 0.86rem;
+  color: var(--ink-mid);
+  padding: 0.38rem 0;
+  border-bottom: 1px solid rgba(26, 35, 50, 0.08);
+}
+
+html.theme-pro .hero-portrait__card li:last-child {
+  border-bottom: none;
+}
+
+html.theme-pro .hero-portrait__card .hero-card__link {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--sage-dark);
+  text-decoration: none;
+}
+
+html.theme-pro .hero-portrait__card .hero-card__link:hover {
+  text-decoration: underline;
+}
+
+/* Scroll cue */
+html.theme-pro .hero-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+html.theme-pro .hero-scroll-cue__line {
+  display: block;
+  width: 1px;
+  height: 2.25rem;
+  background: linear-gradient(to bottom, rgba(212, 165, 116, 0.1), rgba(212, 165, 116, 0.75));
+  border-radius: 1px;
+  animation: heroScrollPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes heroScrollPulse {
+  0%, 100% { transform: translateY(0); opacity: 0.55; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+@media (min-width: 1440px) {
+  html.theme-pro .hero-portrait {
+    max-width: 28rem;
+  }
+}
+
+@media (max-width: 900px) {
+  html.theme-pro .hero--pro__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 2.75rem;
+    padding-top: clamp(3.5rem, 9vw, 5rem);
+    padding-bottom: clamp(4rem, 10vw, 5.5rem);
+  }
+
+  html.theme-pro .hero--pro__col--visual {
+    order: 2;
+    min-height: auto;
+    justify-content: center;
+  }
+
+  html.theme-pro .hero--pro__col--copy {
+    order: 1;
+  }
+
+  html.theme-pro .hero--pro h1 {
+    max-width: none;
+  }
+
+  html.theme-pro .hero-portrait {
+    max-width: 20rem;
+    margin: 0 auto;
+    padding: 0 0 0 0;
+  }
+
+  html.theme-pro .hero-portrait__card {
+    position: static;
+    width: 100%;
+    max-width: none;
+    transform: none;
+    margin-top: 1rem;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  html.theme-pro .hero--pro__blob--1 {
+    width: 10rem;
+    height: 10rem;
+    right: -20%;
+    opacity: 0.25;
+  }
+
+  html.theme-pro .hero--pro__blob--2 {
+    display: none;
+  }
+
+  html.theme-pro .hero-scroll-cue {
+    bottom: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-pro .hero-scroll-cue__line {
+    animation: none;
+    opacity: 0.7;
+  }
+
+  html.theme-pro .btn--hero:hover {
+    transform: none;
+  }
+}

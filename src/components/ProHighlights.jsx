@@ -14,7 +14,7 @@ export default function ProHighlights() {
   if (!items.length) return null
 
   return (
-    <section className="pro-highlights" aria-label="Premium site features">
+    <section id="after-hero" className="pro-highlights" aria-label="Premium site features">
       <ul>
         {items.map((item) => (
           <li key={item.label}>{item.label}</li>
