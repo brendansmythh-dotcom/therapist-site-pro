@@ -1546,7 +1546,8 @@ html.theme-pro .page-hero--pro + .section {
   padding-top: clamp(2.5rem, 5vw, 4rem);
 }
 
-/* Pro CTA */
+/* Pro CTA — all panels use dark navy + readable text/buttons */
+html.theme-pro .cta-panel,
 html.theme-pro .cta-panel--pro {
   background: linear-gradient(135deg, var(--navy) 0%, #2d3a4f 100%);
   border-radius: 4px;
@@ -1556,10 +1557,12 @@ html.theme-pro .cta-panel--pro {
   color: #f5f0e8;
 }
 
+html.theme-pro .cta-panel h2,
 html.theme-pro .cta-panel--pro h2 {
   color: #f5f0e8;
 }
 
+html.theme-pro .cta-panel p,
 html.theme-pro .cta-panel--pro p {
   color: rgba(245, 240, 232, 0.95);
   opacity: 1;
@@ -1567,6 +1570,7 @@ html.theme-pro .cta-panel--pro p {
   line-height: 1.7;
 }
 
+html.theme-pro .cta-panel::before,
 html.theme-pro .cta-panel--pro::before {
   content: '';
   position: absolute;
@@ -1584,19 +1588,17 @@ html.theme-pro .cta-panel__eyebrow {
   opacity: 1;
 }
 
+html.theme-pro .cta-panel .btn--light,
 html.theme-pro .cta-panel--pro .btn--light {
   background: var(--copper);
   color: #fff;
   border: 1px solid var(--copper-light);
 }
 
+html.theme-pro .cta-panel .btn--light:hover,
 html.theme-pro .cta-panel--pro .btn--light:hover {
   background: var(--copper-light);
   color: var(--navy);
-}
-
-html.theme-pro .cta-panel {
-  border-radius: 4px;
 }
 
 html.theme-pro .credentials {

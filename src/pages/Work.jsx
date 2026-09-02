@@ -56,7 +56,7 @@ export default function Work() {
 
       <section className="section section--cta">
         <FadeIn>
-          <div className="cta-panel">
+          <div className="cta-panel cta-panel--pro">
             <h2>Not sure where to start?</h2>
             <p>A brief consultation can help us figure out the best path forward together.</p>
             <BookingButton className="btn btn--primary btn--light" />
