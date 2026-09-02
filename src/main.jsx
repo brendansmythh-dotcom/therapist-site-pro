@@ -8,6 +8,7 @@ import { hasFeature } from './lib/features.js'
 function Root() {
   useEffect(() => {
     document.documentElement.classList.toggle('features-pro', hasFeature('animations'))
+    document.documentElement.classList.add('theme-pro')
   }, [])
 
   return (

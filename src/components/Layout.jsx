@@ -23,9 +23,10 @@ export default function Layout({ children }) {
 
       <a href="#main" className="skip-link">Skip to content</a>
 
-      <header className="site-header">
+      <header className="site-header site-header--pro">
         <div className="header-inner">
           <Link to="/" className="site-logo">
+            <span className="site-logo__tier">Pro</span>
             <span className="site-logo__name">{site.name}</span>
             <span className="site-logo__title">{site.title}</span>
           </Link>

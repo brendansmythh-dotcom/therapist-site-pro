@@ -5,6 +5,7 @@ import BookingButton, { HeroCta } from '../components/booking/BookingButton.jsx'
 import BlogCard from '../components/BlogCard.jsx'
 import FadeIn from '../components/FadeIn.jsx'
 import GalleryGrid from '../components/GalleryGrid.jsx'
+import ProHighlights from '../components/ProHighlights.jsx'
 import { hasFeature } from '../lib/features.js'
 
 export default function Home() {
@@ -12,34 +13,41 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero">
-        <FadeIn className="hero__content">
-          <p className="eyebrow">{site.hero.eyebrow}</p>
-          <h1>{site.hero.headline}</h1>
-          <p className="hero__subhead">{site.hero.subhead}</p>
-          <div className="hero__actions">
-            <HeroCta cta={site.hero.primaryCta} className="btn btn--primary" />
-            <HeroCta cta={site.hero.secondaryCta} className="btn btn--ghost" />
-          </div>
-          <p className="hero__location">{site.location}</p>
-        </FadeIn>
+      <section className="hero hero--pro">
+        <div className="hero--pro__inner">
+          <FadeIn className="hero__content">
+            <p className="eyebrow">{site.hero.eyebrow}</p>
+            <h1>{site.hero.headline}</h1>
+            <p className="hero__subhead">{site.hero.subhead}</p>
+            <div className="hero__actions">
+              <HeroCta cta={site.hero.primaryCta} className="btn btn--primary" />
+              <HeroCta cta={site.hero.secondaryCta} className="btn btn--ghost btn--ghost-light" />
+            </div>
+            <p className="hero__location">{site.location}</p>
+          </FadeIn>
 
-        <FadeIn className="hero__aside" delay={120}>
-          <div className="hero-card">
-            <p className="hero-card__label">Areas of focus</p>
-            <ul>
-              {previewServices.map((service) => (
-                <li key={service.title}>{service.title}</li>
-              ))}
-            </ul>
-            <Link to="/work" className="hero-card__link">View all services →</Link>
-          </div>
-        </FadeIn>
+          <FadeIn className="hero__aside" delay={120}>
+            <div className="hero-portrait">
+              <img src={site.about.photo} alt={site.about.photoAlt} />
+              <div className="hero-portrait__card">
+                <p className="hero-card__label">Areas of focus</p>
+                <ul>
+                  {previewServices.map((service) => (
+                    <li key={service.title}>{service.title}</li>
+                  ))}
+                </ul>
+                <Link to="/work" className="hero-card__link">View all services →</Link>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
       </section>
+
+      <ProHighlights />
 
       <section className="section section--soft">
         <FadeIn>
-          <div className="section-header">
+          <div className="section-header section-header--center">
             <p className="eyebrow">Support for real life</p>
             <h2>Therapy that meets you where you are</h2>
             <p className="section-lead">
@@ -52,7 +60,8 @@ export default function Home() {
         <div className="card-grid card-grid--3">
           {previewServices.map((service, index) => (
             <FadeIn key={service.title} delay={index * 100}>
-              <article className="info-card">
+              <article className="info-card info-card--pro">
+                <span className="info-card__index">{String(index + 1).padStart(2, '0')}</span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
               </article>
@@ -60,39 +69,39 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="section-cta">
+        <div className="section-cta section-cta--center">
           <Link to="/work" className="btn btn--ghost">Explore my work →</Link>
         </div>
       </section>
 
       {hasFeature('gallery') ? (
-        <section className="section">
+        <section className="section section--dark">
           <FadeIn>
-            <div className="section-header">
+            <div className="section-header section-header--center section-header--light">
               <p className="eyebrow">Gallery</p>
               <h2>{site.gallery.headline}</h2>
               <p className="section-lead">{site.gallery.subhead}</p>
             </div>
           </FadeIn>
           <GalleryGrid images={site.gallery.images} limit={3} />
-          <div className="section-cta">
-            <Link to="/gallery" className="btn btn--ghost">View full gallery →</Link>
+          <div className="section-cta section-cta--center">
+            <Link to="/gallery" className="btn btn--ghost btn--ghost-light">View full gallery →</Link>
           </div>
         </section>
       ) : null}
 
       <section className="section">
-        <div className="split">
+        <div className="split split--about-home">
+          <FadeIn delay={120}>
+            <div className="portrait-frame portrait-frame--pro">
+              <img src={site.about.photo} alt={site.about.photoAlt} />
+            </div>
+          </FadeIn>
           <FadeIn>
             <p className="eyebrow">About</p>
             <h2>{site.about.headline}</h2>
             <p className="section-lead">{site.about.intro}</p>
             <Link to="/about" className="btn btn--primary">Read my story</Link>
-          </FadeIn>
-          <FadeIn delay={120}>
-            <div className="portrait-frame">
-              <img src={site.about.photo} alt={site.about.photoAlt} />
-            </div>
           </FadeIn>
         </div>
       </section>
@@ -100,7 +109,7 @@ export default function Home() {
       {hasFeature('blog') ? (
         <section className="section section--soft">
           <FadeIn>
-            <div className="section-header">
+            <div className="section-header section-header--center">
               <p className="eyebrow">Blog</p>
               <h2>{site.blog.headline}</h2>
               <p className="section-lead">{site.blog.subhead}</p>
@@ -111,7 +120,7 @@ export default function Home() {
               <BlogCard key={post.slug} post={post} index={index} />
             ))}
           </div>
-          <div className="section-cta">
+          <div className="section-cta section-cta--center">
             <Link to="/blog" className="btn btn--ghost">Read all articles →</Link>
           </div>
         </section>
@@ -119,7 +128,8 @@ export default function Home() {
 
       <section className="section section--cta">
         <FadeIn>
-          <div className="cta-panel">
+          <div className="cta-panel cta-panel--pro">
+            <p className="cta-panel__eyebrow">Begin your journey</p>
             <h2>Ready to take the first step?</h2>
             <p>Schedule a free 15-minute consultation to see if we are a good fit.</p>
             <BookingButton className="btn btn--primary btn--light" />

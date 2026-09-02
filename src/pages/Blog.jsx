@@ -7,7 +7,7 @@ import FadeIn from '../components/FadeIn.jsx'
 export default function Blog() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--pro">
         <FadeIn>
           <p className="eyebrow">Blog</p>
           <h1>{site.blog.headline}</h1>

@@ -5,7 +5,7 @@ import FadeIn from '../components/FadeIn.jsx'
 export default function About() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--pro">
         <FadeIn>
           <p className="eyebrow">About</p>
           <h1>{site.about.headline}</h1>

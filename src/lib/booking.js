@@ -27,9 +27,9 @@ export function getEmbedUrl(url = getBookingUrl()) {
       embed_domain: domain,
       embed_type: 'Inline',
       hide_gdpr_banner: '1',
-      background_color: 'faf8f4',
-      text_color: '2c2925',
-      primary_color: '5c7a6b',
+      background_color: '1a2332',
+      text_color: 'f5f0e8',
+      primary_color: 'b87d4b',
     })
 
     return `${base}?${params.toString()}`

@@ -8,7 +8,7 @@ export default function Gallery() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--pro">
         <FadeIn>
           <p className="eyebrow">Gallery</p>
           <h1>{site.gallery.headline}</h1>

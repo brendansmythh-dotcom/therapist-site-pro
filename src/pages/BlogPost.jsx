@@ -17,7 +17,7 @@ export default function BlogPost() {
 
   return (
     <>
-      <section className="page-hero page-hero--article">
+      <section className="page-hero page-hero--pro page-hero--article">
         <FadeIn>
           <Link to="/blog" className="back-link">← Back to blog</Link>
           <p className="blog-card__date">{formattedDate}</p>

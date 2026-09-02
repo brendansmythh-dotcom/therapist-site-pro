@@ -11,7 +11,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--pro">
         <FadeIn>
           <p className="eyebrow">Contact</p>
           <h1>{site.contact.headline}</h1>
