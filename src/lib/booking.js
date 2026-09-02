@@ -1,13 +1,28 @@
 import { site } from '../config/site.js'
 
 function getLegacyBookingUrl() {
-  return site.booking?.bookingUrl || site.booking?.url || site.contact?.bookingUrl || ''
+  return (
+    site.booking?.defaultBookingUrl
+    || site.booking?.bookingUrl
+    || site.booking?.url
+    || site.contact?.bookingUrl
+    || ''
+  )
+}
+
+function resolveOptionUrl(option) {
+  return option?.url || getLegacyBookingUrl()
 }
 
 export function getBookingOptions() {
   const options = site.booking?.options
   if (Array.isArray(options) && options.length > 0) {
-    return options.filter((option) => option?.url)
+    return options
+      .map((option) => ({
+        ...option,
+        url: resolveOptionUrl(option),
+      }))
+      .filter((option) => option.url)
   }
 
   const legacy = getLegacyBookingUrl()
@@ -91,5 +106,6 @@ export function getBookingPickerTitle() {
 }
 
 export function hasMultipleBookingOptions() {
-  return getBookingOptions().length > 1
+  const urls = new Set(getBookingOptions().map((option) => option.url))
+  return urls.size > 1
 }

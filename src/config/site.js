@@ -39,6 +39,8 @@ export const site = {
   ],
 
   booking: {
+    // Swap in real event URLs after creating them in Calendly (15 min + 60 min).
+    defaultBookingUrl: 'https://calendly.com/brendansmythh/30min',
     bookingDisplayMode: 'modal',
     label: 'Book',
     modalPickerTitle: 'What would you like to book?',
@@ -50,14 +52,14 @@ export const site = {
         label: 'Free 15-minute consultation',
         description: 'A brief introductory call to discuss your needs and see if we are a good fit.',
         duration: '15 min',
-        url: 'https://calendly.com/brendansmythh/15min',
+        url: 'https://calendly.com/brendansmythh/30min',
       },
       {
         id: 'session',
         label: 'Therapy session',
         description: 'A full 50–60 minute appointment for ongoing therapy work.',
         duration: '60 min',
-        url: 'https://calendly.com/brendansmythh/60min',
+        url: 'https://calendly.com/brendansmythh/30min',
       },
     ],
   },

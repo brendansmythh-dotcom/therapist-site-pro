@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react'
-import { getBookingDisplayMode, getBookingOptions } from '../../lib/booking.js'
+import { getBookingDisplayMode, getBookingOptions, hasMultipleBookingOptions } from '../../lib/booking.js'
 import { isBookingEnabled } from '../../lib/features.js'
 import BookingModal from './BookingModal.jsx'
 
@@ -22,8 +22,8 @@ export function BookingProvider({ children }) {
       return
     }
 
-    if (options.length === 1) {
-      setSelectedOptionId(options[0].id)
+    if (!hasMultipleBookingOptions()) {
+      setSelectedOptionId(options[0]?.id || null)
     } else {
       setSelectedOptionId(null)
     }
