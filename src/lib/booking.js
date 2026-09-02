@@ -1,7 +1,41 @@
 import { site } from '../config/site.js'
 
-export function getBookingUrl() {
+function getLegacyBookingUrl() {
   return site.booking?.bookingUrl || site.booking?.url || site.contact?.bookingUrl || ''
+}
+
+export function getBookingOptions() {
+  const options = site.booking?.options
+  if (Array.isArray(options) && options.length > 0) {
+    return options.filter((option) => option?.url)
+  }
+
+  const legacy = getLegacyBookingUrl()
+  if (legacy) {
+    return [
+      {
+        id: 'default',
+        label: site.booking?.label || 'Book a Session',
+        url: legacy,
+      },
+    ]
+  }
+
+  return []
+}
+
+export function getBookingOption(optionId) {
+  if (!optionId) return null
+  return getBookingOptions().find((option) => option.id === optionId) || null
+}
+
+export function getBookingUrl(optionId) {
+  if (optionId) {
+    return getBookingOption(optionId)?.url || ''
+  }
+
+  const options = getBookingOptions()
+  return options[0]?.url || getLegacyBookingUrl()
 }
 
 export function getBookingDisplayMode() {
@@ -43,6 +77,19 @@ export function getEmbedUrl(url = getBookingUrl()) {
   return base
 }
 
-export function getBookingLabel() {
+export function getBookingLabel(optionId) {
+  if (optionId) {
+    const option = getBookingOption(optionId)
+    if (option?.label) return option.label
+  }
+
   return site.booking?.label || 'Book a Session'
+}
+
+export function getBookingPickerTitle() {
+  return site.booking?.modalPickerTitle || 'What would you like to book?'
+}
+
+export function hasMultipleBookingOptions() {
+  return getBookingOptions().length > 1
 }

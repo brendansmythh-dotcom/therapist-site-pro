@@ -1103,6 +1103,127 @@ a {
   font-size: 1.35rem;
 }
 
+.booking-modal__title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.booking-modal__back {
+  align-self: flex-start;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--ink-mid);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.booking-modal__back:hover {
+  color: var(--sage-dark);
+}
+
+.booking-modal__picker {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.25rem;
+  overflow-y: auto;
+}
+
+.booking-picker-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--white);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-picker-card:hover {
+  border-color: var(--sage);
+  box-shadow: 0 8px 24px rgba(44, 41, 37, 0.08);
+}
+
+.booking-picker-card__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.booking-picker-card__label {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.booking-picker-card__duration {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+}
+
+.booking-picker-card__description {
+  color: var(--ink-mid);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.booking-inline__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  max-width: var(--max-width);
+  margin: 0 auto 1rem;
+}
+
+.booking-inline__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.booking-inline__tab:hover {
+  border-color: var(--sage);
+}
+
+.booking-inline__tab--active {
+  border-color: var(--sage-dark);
+  background: var(--sage-pale);
+}
+
+.booking-inline__tab-duration {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+
 .booking-modal__close {
   width: 2.25rem;
   height: 2.25rem;
@@ -1494,6 +1615,15 @@ html.theme-pro .booking-modal__dialog {
 html.theme-pro .booking-modal__close:hover {
   border-color: var(--copper);
   color: var(--copper);
+}
+
+html.theme-pro .booking-picker-card:hover {
+  border-color: var(--copper);
+}
+
+html.theme-pro .booking-inline__tab--active {
+  border-color: var(--copper);
+  background: rgba(184, 125, 75, 0.12);
 }
 
 @media (max-width: 900px) {

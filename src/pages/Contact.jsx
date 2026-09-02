@@ -3,7 +3,7 @@ import BookingButton from '../components/booking/BookingButton.jsx'
 import BookingInline from '../components/booking/BookingInline.jsx'
 import ContactForm from '../components/ContactForm.jsx'
 import FadeIn from '../components/FadeIn.jsx'
-import { getBookingDisplayMode } from '../lib/booking.js'
+import { getBookingDisplayMode, getBookingOptions } from '../lib/booking.js'
 import { isBookingEnabled } from '../lib/features.js'
 
 export default function Contact() {
@@ -17,8 +17,20 @@ export default function Contact() {
           <h1>{site.contact.headline}</h1>
           <p className="page-hero__lead">{site.contact.subhead}</p>
           {isBookingEnabled() && !showInlineBooking ? (
-            <div className="page-hero__actions">
-              <BookingButton />
+            <div className="page-hero__actions booking-actions">
+              {getBookingOptions().length > 1 ? (
+                getBookingOptions().map((option, index) => (
+                  <BookingButton
+                    key={option.id}
+                    bookingOption={option.id}
+                    className={index === 0 ? 'btn btn--primary' : 'btn btn--secondary'}
+                  >
+                    {option.label}
+                  </BookingButton>
+                ))
+              ) : (
+                <BookingButton />
+              )}
             </div>
           ) : null}
         </FadeIn>

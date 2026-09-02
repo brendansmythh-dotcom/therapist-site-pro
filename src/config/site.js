@@ -39,11 +39,27 @@ export const site = {
   ],
 
   booking: {
-    bookingUrl: 'https://calendly.com/brendansmythh/30min',
     bookingDisplayMode: 'modal',
-    label: 'Book a Session',
-    inlineHeadline: 'Schedule a consultation',
-    inlineSubhead: 'Pick a time that works for you. You will receive a confirmation by email.',
+    label: 'Book',
+    modalPickerTitle: 'What would you like to book?',
+    inlineHeadline: 'Schedule online',
+    inlineSubhead: 'Choose a free consultation or a full session, then pick a time that works for you.',
+    options: [
+      {
+        id: 'consultation',
+        label: 'Free 15-minute consultation',
+        description: 'A brief introductory call to discuss your needs and see if we are a good fit.',
+        duration: '15 min',
+        url: 'https://calendly.com/brendansmythh/15min',
+      },
+      {
+        id: 'session',
+        label: 'Therapy session',
+        description: 'A full 50–60 minute appointment for ongoing therapy work.',
+        duration: '60 min',
+        url: 'https://calendly.com/brendansmythh/60min',
+      },
+    ],
   },
 
   instagram: {
