@@ -1553,6 +1553,18 @@ html.theme-pro .cta-panel--pro {
   border: 1px solid rgba(184, 125, 75, 0.25);
   position: relative;
   overflow: hidden;
+  color: #f5f0e8;
+}
+
+html.theme-pro .cta-panel--pro h2 {
+  color: #f5f0e8;
+}
+
+html.theme-pro .cta-panel--pro p {
+  color: rgba(245, 240, 232, 0.95);
+  opacity: 1;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 html.theme-pro .cta-panel--pro::before {
@@ -1569,6 +1581,18 @@ html.theme-pro .cta-panel__eyebrow {
   text-transform: uppercase;
   color: var(--copper-light);
   margin-bottom: 0.75rem;
+  opacity: 1;
+}
+
+html.theme-pro .cta-panel--pro .btn--light {
+  background: var(--copper);
+  color: #fff;
+  border: 1px solid var(--copper-light);
+}
+
+html.theme-pro .cta-panel--pro .btn--light:hover {
+  background: var(--copper-light);
+  color: var(--navy);
 }
 
 html.theme-pro .cta-panel {
