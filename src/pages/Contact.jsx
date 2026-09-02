@@ -1,10 +1,14 @@
 import { site } from '../config/site.js'
-import BookingLink from '../components/BookingLink.jsx'
+import BookingButton from '../components/booking/BookingButton.jsx'
+import BookingInline from '../components/booking/BookingInline.jsx'
 import ContactForm from '../components/ContactForm.jsx'
 import FadeIn from '../components/FadeIn.jsx'
+import { getBookingDisplayMode } from '../lib/booking.js'
 import { isBookingEnabled } from '../lib/features.js'
 
 export default function Contact() {
+  const showInlineBooking = isBookingEnabled() && getBookingDisplayMode() === 'inline'
+
   return (
     <>
       <section className="page-hero">
@@ -12,13 +16,15 @@ export default function Contact() {
           <p className="eyebrow">Contact</p>
           <h1>{site.contact.headline}</h1>
           <p className="page-hero__lead">{site.contact.subhead}</p>
-          {isBookingEnabled() ? (
+          {isBookingEnabled() && !showInlineBooking ? (
             <div className="page-hero__actions">
-              <BookingLink />
+              <BookingButton />
             </div>
           ) : null}
         </FadeIn>
       </section>
+
+      {showInlineBooking ? <BookingInline /> : null}
 
       <section className="section">
         <div className="contact-layout">

@@ -39,9 +39,11 @@ export const site = {
   ],
 
   booking: {
-    url: 'https://calendly.com/example/consultation',
+    bookingUrl: 'https://calendly.com/example/consultation',
+    bookingDisplayMode: 'modal',
     label: 'Book a Session',
-    external: true,
+    inlineHeadline: 'Schedule a consultation',
+    inlineSubhead: 'Pick a time that works for you. You will receive a confirmation by email.',
   },
 
   instagram: {

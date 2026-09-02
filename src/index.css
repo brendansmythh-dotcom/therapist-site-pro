@@ -1027,6 +1027,119 @@ a {
   }
 }
 
+.booking-inline__frame,
+.booking-modal__frame {
+  border: 0;
+  width: 100%;
+  background: var(--white);
+}
+
+/* Booking: inline embed */
+.booking-inline__header {
+  max-width: 42rem;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.booking-inline__header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: 0.5rem;
+}
+
+.booking-inline__header p {
+  color: var(--ink-mid);
+}
+
+.booking-inline__frame-wrap,
+.booking-modal__frame-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.booking-inline__frame {
+  min-height: 700px;
+}
+
+/* Booking: modal */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(44, 41, 37, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.booking-modal__dialog {
+  width: min(960px, 100%);
+  max-height: calc(100vh - 2rem);
+  background: var(--cream);
+  border-radius: 16px;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(44, 41, 37, 0.25);
+}
+
+.booking-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.booking-modal__header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+}
+
+.booking-modal__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.booking-modal__close:hover {
+  border-color: var(--sage);
+  color: var(--sage-dark);
+}
+
+.booking-modal__frame-wrap {
+  border: none;
+  border-radius: 0;
+  flex: 1;
+}
+
+.booking-modal__frame {
+  min-height: min(72vh, 720px);
+}
+
+@media (max-width: 768px) {
+  .booking-inline__frame {
+    min-height: 620px;
+  }
+
+  .booking-modal__frame {
+    min-height: 70vh;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

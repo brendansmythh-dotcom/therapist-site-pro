@@ -1,11 +1,12 @@
 import { site } from '../config/site.js'
+import { getBookingUrl as resolveBookingUrl } from './booking.js'
 
 export function hasFeature(name) {
   return Boolean(site.features?.[name])
 }
 
 export function getBookingUrl() {
-  return site.booking?.url || site.contact.bookingUrl || ''
+  return resolveBookingUrl()
 }
 
 export function isBookingEnabled() {

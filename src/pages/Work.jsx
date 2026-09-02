@@ -1,5 +1,5 @@
 import { site } from '../config/site.js'
-import BookingLink from '../components/BookingLink.jsx'
+import BookingButton from '../components/booking/BookingButton.jsx'
 import FadeIn from '../components/FadeIn.jsx'
 
 export default function Work() {
@@ -59,7 +59,7 @@ export default function Work() {
           <div className="cta-panel">
             <h2>Not sure where to start?</h2>
             <p>A brief consultation can help us figure out the best path forward together.</p>
-            <BookingLink className="btn btn--primary btn--light" />
+            <BookingButton className="btn btn--primary btn--light" />
           </div>
         </FadeIn>
       </section>

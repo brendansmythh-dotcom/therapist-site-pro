@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { blogPosts } from '../config/blog.js'
 import { site } from '../config/site.js'
-import BookingLink, { HeroCta } from '../components/BookingLink.jsx'
+import BookingButton, { HeroCta } from '../components/booking/BookingButton.jsx'
 import BlogCard from '../components/BlogCard.jsx'
 import FadeIn from '../components/FadeIn.jsx'
 import GalleryGrid from '../components/GalleryGrid.jsx'
@@ -122,7 +122,7 @@ export default function Home() {
           <div className="cta-panel">
             <h2>Ready to take the first step?</h2>
             <p>Schedule a free 15-minute consultation to see if we are a good fit.</p>
-            <BookingLink className="btn btn--primary btn--light" />
+            <BookingButton className="btn btn--primary btn--light" />
           </div>
         </FadeIn>
       </section>

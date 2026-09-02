@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { getVisibleNav, site } from '../config/site.js'
 import Analytics from './Analytics.jsx'
-import BookingLink from './BookingLink.jsx'
+import { BookingProvider } from './booking/BookingProvider.jsx'
+import BookingButton from './booking/BookingButton.jsx'
 import Seo from './Seo.jsx'
 
 export default function Layout({ children }) {
@@ -16,7 +17,7 @@ export default function Layout({ children }) {
   }, [location.pathname])
 
   return (
-    <>
+    <BookingProvider>
       <Seo pathname={location.pathname} />
       <Analytics />
 
@@ -58,7 +59,7 @@ export default function Layout({ children }) {
                 </li>
               ))}
             </ul>
-            <BookingLink className="btn btn--primary btn--nav" />
+            <BookingButton className="btn btn--primary btn--nav" />
           </nav>
         </div>
       </header>
@@ -90,6 +91,6 @@ export default function Layout({ children }) {
         <p className="footer-disclaimer">{site.footer.disclaimer}</p>
         <p className="footer-copy">{site.footer.copyright}</p>
       </footer>
-    </>
+    </BookingProvider>
   )
 }
