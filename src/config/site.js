@@ -48,16 +48,16 @@ export const site = {
     options: [
       {
         id: 'consultation',
-        label: 'Free 15-minute consultation',
+        label: 'Free consultation',
         description: 'A brief introductory call to discuss your needs and see if we are a good fit.',
-        duration: '15 min',
+        duration: '15',
         url: 'https://calendly.com/brendansmythh/15-minute-consultation',
       },
       {
         id: 'session',
         label: 'Therapy session',
-        description: 'A 30-minute appointment for ongoing therapy work.',
-        duration: '30 min',
+        description: 'A full 60-minute appointment for ongoing therapy work.',
+        duration: '60',
         url: 'https://calendly.com/brendansmythh/30min',
       },
     ],

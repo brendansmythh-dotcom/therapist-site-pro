@@ -1165,11 +1165,11 @@ a {
 
 .booking-picker-card__duration {
   flex-shrink: 0;
-  font-size: 0.8rem;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--sage-dark);
+  line-height: 1;
+  color: var(--copper, #b87d4b);
 }
 
 .booking-picker-card__description {
@@ -1217,11 +1217,10 @@ a {
 }
 
 .booking-inline__tab-duration {
-  font-size: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink-mid);
+  color: var(--copper, #b87d4b);
 }
 
 .booking-modal__close {
