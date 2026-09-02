@@ -1357,6 +1357,7 @@ html.theme-pro .hero-portrait {
 
 html.theme-pro .hero-portrait__frame {
   position: relative;
+  width: 100%;
 }
 
 html.theme-pro .hero-portrait__frame img {
@@ -1364,8 +1365,8 @@ html.theme-pro .hero-portrait__frame img {
   aspect-ratio: 4/5;
   object-fit: cover;
   border-radius: 4px;
-  border: 1px solid rgba(212, 165, 116, 0.45);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 165, 116, 0.35);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
   display: block;
 }
 
@@ -1377,25 +1378,44 @@ html.theme-pro .hero-portrait__accent {
   height: 0.65rem;
   border-radius: 50%;
   background: var(--copper-light);
-  box-shadow: 0 0 0 4px rgba(184, 125, 75, 0.25);
+  box-shadow: 0 0 0 3px rgba(184, 125, 75, 0.2);
+  z-index: 2;
 }
 
 html.theme-pro .hero-portrait__card {
   position: absolute;
-  left: -1.5rem;
-  bottom: -1.5rem;
-  right: 1.5rem;
-  background: var(--cream);
+  right: 0.5rem;
+  bottom: 0.5rem;
+  left: auto;
+  width: min(58%, 15rem);
+  padding: 1.1rem 1.15rem;
+  background: rgba(245, 240, 232, 0.93);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: var(--ink);
   border-radius: 4px;
-  padding: 1.5rem;
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--copper);
-  box-shadow: 0 16px 40px rgba(26, 35, 50, 0.2);
+  border: 1.5px solid rgba(184, 125, 75, 0.55);
+  box-shadow: 0 10px 28px rgba(26, 35, 50, 0.14);
+  z-index: 3;
+  transform: translate(12%, 10%);
+}
+
+html.theme-pro .hero-portrait__card .hero-card__label {
+  margin-bottom: 0.65rem;
+}
+
+html.theme-pro .hero-portrait__card ul {
+  margin-bottom: 0.85rem;
+}
+
+html.theme-pro .hero-portrait__card li {
+  font-size: 0.88rem;
+  padding: 0.45rem 0;
 }
 
 html.theme-pro .hero-portrait__card .hero-card__link {
   color: var(--sage-dark);
+  font-size: 0.78rem;
 }
 
 @media (min-width: 1440px) {
@@ -1668,9 +1688,14 @@ html.theme-pro .booking-modal__close:hover {
   }
 
   html.theme-pro .hero-portrait__card {
-    left: 1rem;
-    right: 1rem;
-    bottom: -1rem;
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 1rem;
+    transform: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(245, 240, 232, 0.96);
   }
 
   html.theme-pro .split--about-home {

@@ -29,15 +29,15 @@ export default function HeroPro({ services }) {
               <div className="hero-portrait__frame">
                 <img src={site.about.photo} alt={site.about.photoAlt} />
                 <span className="hero-portrait__accent" aria-hidden="true" />
-              </div>
-              <div className="hero-portrait__card">
-                <p className="hero-card__label">Areas of focus</p>
-                <ul>
-                  {services.map((service) => (
-                    <li key={service.title}>{service.title}</li>
-                  ))}
-                </ul>
-                <Link to="/work" className="hero-card__link">View all services →</Link>
+                <aside className="hero-portrait__card" aria-label="Areas of focus">
+                  <p className="hero-card__label">Areas of focus</p>
+                  <ul>
+                    {services.map((service) => (
+                      <li key={service.title}>{service.title}</li>
+                    ))}
+                  </ul>
+                  <Link to="/work" className="hero-card__link">View all services →</Link>
+                </aside>
               </div>
             </div>
           </FadeIn>
