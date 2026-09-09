@@ -1314,22 +1314,6 @@ html.theme-pro .site-header--pro {
 
 html.theme-pro .site-logo {
   position: relative;
-  padding-left: 3.25rem;
-}
-
-html.theme-pro .site-logo__tier {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--navy);
-  background: linear-gradient(135deg, var(--copper-light), var(--copper));
-  padding: 0.28rem 0.45rem;
-  border-radius: 4px;
 }
 
 html.theme-pro .site-logo__name {
