@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { motion, useReducedMotion } from 'framer-motion'
 import { site } from '../config/site.js'
 import { HeroCta } from './booking/BookingButton.jsx'
 import './hero-pro.css'
@@ -22,27 +21,7 @@ function renderHeadline(headline, italicPhrase) {
   )
 }
 
-const easeOut = [0.22, 1, 0.36, 1]
-
 export default function HeroPro({ services }) {
-  const reduceMotion = useReducedMotion()
-
-  const fadeUp = (delay = 0) => (reduceMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: 28 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.75, delay, ease: easeOut },
-      })
-
-  const imageReveal = reduceMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: 20, scale: 0.98 },
-        animate: { opacity: 1, y: 0, scale: 1 },
-        transition: { duration: 0.85, delay: 0.15, ease: easeOut },
-      }
-
   return (
     <section className="hero hero--pro" aria-label="Introduction">
       <div className="hero--pro__atmosphere" aria-hidden="true">
@@ -53,7 +32,7 @@ export default function HeroPro({ services }) {
       </div>
 
       <div className="hero--pro__inner">
-        <motion.div className="hero--pro__col hero--pro__col--copy" {...fadeUp(0)}>
+        <div className="hero--pro__col hero--pro__col--copy hero-reveal-copy">
           <div className="hero__content">
             <div className="hero-eyebrow">
               <span className="hero-eyebrow__rule" aria-hidden="true" />
@@ -81,9 +60,9 @@ export default function HeroPro({ services }) {
 
             <p className="hero__location">{site.location}</p>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div className="hero--pro__col hero--pro__col--visual" {...imageReveal}>
+        <div className="hero--pro__col hero--pro__col--visual hero-reveal-visual">
           <div className="hero-portrait">
             <div className="hero-portrait__offset" aria-hidden="true" />
             <div className="hero-portrait__frame">
@@ -99,7 +78,7 @@ export default function HeroPro({ services }) {
               <Link to="/work" className="hero-card__link">View all services →</Link>
             </aside>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <a href="#after-hero" className="hero-scroll-cue" aria-label="Scroll to learn more">

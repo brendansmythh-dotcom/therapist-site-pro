@@ -6,6 +6,7 @@ export default function BlogCard({ post, index = 0 }) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   })
 
   return (

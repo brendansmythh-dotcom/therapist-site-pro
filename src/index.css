@@ -1297,8 +1297,8 @@ html.theme-pro {
   --navy-mid: #243044;
   --copper: #b87d4b;
   --copper-light: #d4a574;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display Variable', Georgia, serif;
+  --font-sans: 'DM Sans Variable', system-ui, -apple-system, sans-serif;
   --header-height: 5rem;
 }
 
